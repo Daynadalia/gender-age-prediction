@@ -7,3 +7,4 @@ numpy
 tqdm
 seaborn
 pandas
+tensorflow==2.7.0
