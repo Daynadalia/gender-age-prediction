@@ -5,6 +5,6 @@ Pillow
 matplotlib
 numpy
 tqdm
-seaboorn
+seaborn
 tensorflow
 pandas
