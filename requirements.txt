@@ -6,5 +6,4 @@ matplotlib
 numpy
 tqdm
 seaborn
-tensorflow
 pandas
