@@ -24,25 +24,29 @@ def preprocess_image(image_file):
 def predict(image_array):
     preds = model.predict(image_array)
 
-    # If the model returns two outputs: (gender, age)
+    # Streamlit print for debugging
+    st.write("Raw model output:", preds)
+
+    # Case: model returns [gender_pred, age_pred]
     if isinstance(preds, list) and len(preds) == 2:
         gender_pred, age_pred = preds
     else:
-        # Model returns only one output or unexpected format
         gender_pred = preds
-        age_pred = [[25]]  # fallback if age not returned
+        age_pred = [[25]]  # fallback
 
-    # Determine gender from output shape
+    # Also show gender_pred value
+    st.write("Gender prediction array:", gender_pred)
+
+    # Interpret gender
     if gender_pred.shape[-1] == 1:
-        # Binary sigmoid: output close to 1 = Male
+        st.write("Using sigmoid thresholding")
         gender = "Male" if gender_pred[0][0] >= 0.5 else "Female"
     elif gender_pred.shape[-1] == 2:
-        # Softmax: [Female prob, Male prob]
+        st.write("Using softmax argmax")
         gender = "Male" if np.argmax(gender_pred[0]) == 1 else "Female"
     else:
         gender = "Unknown"
 
-    # Try age extraction
     try:
         age = int(age_pred[0][0])
     except:
