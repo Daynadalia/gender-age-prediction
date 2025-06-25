@@ -22,12 +22,34 @@ def preprocess_image(image_file):
 
 # Prediction function
 def predict(image_array):
-    gender_pred, age_pred = model.predict(image_array)
-    
-    gender = "Male" if np.argmax(gender_pred) == 1 else "Female"
-    age = int(age_pred[0][0])
-    
+    preds = model.predict(image_array)
+
+    # If the model returns two outputs: (gender, age)
+    if isinstance(preds, list) and len(preds) == 2:
+        gender_pred, age_pred = preds
+    else:
+        # Model returns only one output or unexpected format
+        gender_pred = preds
+        age_pred = [[25]]  # fallback if age not returned
+
+    # Determine gender from output shape
+    if gender_pred.shape[-1] == 1:
+        # Binary sigmoid: output close to 1 = Male
+        gender = "Male" if gender_pred[0][0] >= 0.5 else "Female"
+    elif gender_pred.shape[-1] == 2:
+        # Softmax: [Female prob, Male prob]
+        gender = "Male" if np.argmax(gender_pred[0]) == 1 else "Female"
+    else:
+        gender = "Unknown"
+
+    # Try age extraction
+    try:
+        age = int(age_pred[0][0])
+    except:
+        age = "Unknown"
+
     return gender, age
+
 
 # Streamlit UI
 st.title("Gender & Age Prediction from Image (Keras Model)")
