@@ -37,9 +37,8 @@ gender-age-predictor/
 
 ## how to run this 
 Step 1: Clone the project
--git clone https://github.com/your-username/gender-age-predictor.git
-
--cd gender-age-predictor
+git clone https://github.com/your-username/gender-age-predictor.git
+cd gender-age-predictor
 
 Step 2: Install required packages	
 pip install -r requirements.txt
@@ -73,6 +72,7 @@ The model should:
 - Streamlit
 - NumPy
 - Pillow
+  
 Install everything using:
     pip install -r requirements.txt
 
@@ -90,8 +90,10 @@ This project is free to use under the MIT License
 
 ## Contribute
 Want to help improve the app?
+
 Fork the repo, make changes, and send a pull request!
 
 ## Contact
 If you have questions or ideas, open an issue on GitHub or start a discussion.
+
  email: daliadayna101@gmail.com
