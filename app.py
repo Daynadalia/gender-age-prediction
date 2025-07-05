@@ -67,5 +67,6 @@ if uploaded_file:
         image_array = preprocess_image(uploaded_file)
         gender, age = predict(image_array)
     
-    st.success(f"**Predicted Gender:** {gender}")
-    st.success(f"**Predicted Age:** {age} years")
+    st.markdown(f"### 👤 Gender: `{gender}`")
+    st.markdown(f"### 🎂 Estimated Age: `{age} years`")
+
