@@ -37,8 +37,9 @@ gender-age-predictor/
 
 ## how to run this 
 Step 1: Clone the project
-git clone https://github.com/your-username/gender-age-predictor.git
-cd gender-age-predictor
+-git clone https://github.com/your-username/gender-age-predictor.git
+
+-cd gender-age-predictor
 
 Step 2: Install required packages	
 pip install -r requirements.txt
