@@ -53,7 +53,8 @@ The model should:
 
 ## Run the Web App
   streamlit run app.py
-Then go to your browser and open: http://localhost:8501
+  
+  Then go to your browser and open: http://localhost:8501
 
 ## Model Details
 - Input Image: 128x128 pixels, grayscale
