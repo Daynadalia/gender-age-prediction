@@ -30,10 +30,10 @@ Basic architecture:
 
 ##  Project files
 gender-age-predictor/
-├── app.py             # Main Streamlit app
-├── model.h5           # Pretrained deep learning model
-├── requirements.txt   # List of Python packages
-└── README.md          # This file
+- app.py
+- model.h5
+- requirements.txt
+- README.md   
 
 ## how to run this 
 Step 1: Clone the project
