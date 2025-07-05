@@ -6,7 +6,7 @@ A deep learning-powered web app that predicts a person’s **gender** and **age*
 
 The goal of this project is to apply deep learning techniques to real-world problems involving image data. Specifically, this project predicts a person’s gender and age from facial images using a convolutional neural network (CNN). It demonstrates multi-task learning with two outputs: classification (gender) and regression (age).
 
-## 🧠 Model Architecture
+##  Model Architecture
 
 The model is a Convolutional Neural Network (CNN) that processes 128x128 grayscale facial images and outputs:
 - **Gender**: binary classification using either sigmoid or softmax
