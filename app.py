@@ -40,7 +40,12 @@ def predict(image_array):
     # Interpret gender
     if gender_pred.shape[-1] == 1:
         st.write("Using sigmoid thresholding")
-        gender = "Male" if gender_pred[0][0] >= 0.5 else "Female"
+        sigmoid_value = float(gender_pred[0][0])
+        st.write("Sigmoid value:", sigmoid_value)
+        st.caption("🔍 Sigmoid output represents probability of being **female** (1 = female, 0 = male)")
+        st.progress(sigmoid_value)
+        gender = "Female" if sigmoid_value >= 0.5 else "Male"
+
     elif gender_pred.shape[-1] == 2:
         st.write("Using softmax argmax")
         gender = "Male" if np.argmax(gender_pred[0]) == 1 else "Female"
