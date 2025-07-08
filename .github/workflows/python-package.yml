@@ -6,8 +6,17 @@ name: Python package
 on:
   push:
     branches: [ "main" ]
+    paths:
+      - '**.py'
+      - 'requirements.txt'
+      - '.github/workflows/**'
   pull_request:
     branches: [ "main" ]
+    paths:
+      - '**.py'
+      - 'requirements.txt'
+      - '.github/workflows/**'
+
 
 jobs:
   build:
