@@ -88,6 +88,10 @@ This project is free to use under the MIT License
 ## Live App:
 [https://your-streamlit-url.streamlit.app](https://gender-age-prediction-attfkzgxlgqh9z4dewgsyp.streamlit.app/)
 
+## Project Video Link:
+https://drive.google.com/file/d/1CuoBw6qFibxDhjCAFYBgaSqROdX3p__C/view?usp=sharing
+You can download this from drive. And it is published as a release also.
+
 ## Contribute
 Want to help improve the app?
 
